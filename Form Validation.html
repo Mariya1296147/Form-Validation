@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Trainee Information Form</h2>
+
+        <form onsubmit="showData(); return false;">
+
+            <div>
+                <label for="">Name :</label><br>
+                <input type="text" id="name" placeholder="Enter your name"><br>
+            </div>
+
+            <div>
+                <label for="">Contact :</label><br>
+                <input type="text" id="contact" placeholder="Enter your contact"><br>
+            </div>
+            <div>
+                <label for="">Email :</label><br>
+                <input type="text" id="Email" placeholder="Enter @email id"><br>
+            </div>
+            <div>
+                <label for="">password :</label><br>
+                <input type="password" id="password" placeholder="Enter your password"><br>
+            </div>
+            <div>
+                <label for="">Date :</label><br>
+                <input type="date" id="date">
+
+            </div>
+
+            <div>
+                <label for="">Remarks :</label><br>
+                <textarea id="remarks"></textarea>
+            </div>
+            <div>
+                <label for="">Gander :</label><br>
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+            </div>
+            <br>
+            <div>
+                <label for="">course :</label><br>
+                <input type="checkbox" value="NT"> NT
+                <input type="checkbox" value="IAD"> IAD
+                <input type="checkbox" value="DDD"> DDD
+                <input type="checkbox" value="ESAD"> ESAD
+            </div>
+            <br>
+            <div>
+                <label for="">Location :</label>
+                <select id="location">
+                    <option value="">select Location</option>
+                    <option>Banani</option>
+                    <option>Dhanmondi</option>
+                    <option>Mirpur</option>
+                    <option>Badda</option>
+                    <option>Gulsan</option>
+                </select>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="Reset" value="Reset">
+
+        </form>
+    </div>
+    <script>
+        function showData() {
+
+            let name = document.getElementById("name").value;
+            let contact = document.getElementById("contact").value;
+            let remarks = document.getElementById("remarks").value;
+            let location = document.getElementById("location").value;
+            let gender = document.querySelector('input[name="gender"]:checked').value
+            let course = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                .map(ab => ab.value);
+
+
+            alert(name + " " + contact + " " + remarks + " " + " " + location + " " + gender + " " + course);
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
